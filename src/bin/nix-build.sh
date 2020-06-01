@@ -5,6 +5,7 @@ SRC="$(dirname "${BIN}")"
 PROJECT="$(dirname "${SRC}")"
 
 source "${BIN}/verbose.sh"
+source "${SRC}/etc/settings-local.sh"
 
 function run-with-protoc() {
   if type protoc >/dev/null 2>&1
@@ -14,7 +15,7 @@ function run-with-protoc() {
       "$@"
     )
   else
-    docker run --rm -v "${PROJECT}:${PROJECT}" -w "${BIN}" jeroenvm/build-protoc "$@"
+    docker run --rm -v "${PROJECT}:${PROJECT}" -w "${BIN}" "${DOCKER_REPOSITORY}/build-protoc" "$@"
   fi
 }
 
