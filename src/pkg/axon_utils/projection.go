@@ -83,6 +83,7 @@ func RestoreProjection(label string, aggregateIdentifier string, createInitialPr
 		return nil
 	}
 	var lastSequenceNumber int64
+	lastSequenceNumber = -1
 	for {
 		eventMessage, e := client.Recv()
 		if e == io.EOF {
