@@ -54,7 +54,7 @@ func (s *aggregateState) SetSequenceNumber(n int64) {
 }
 
 func NewAggregateState() AggregateState {
-	return &aggregateState{sequenceNumber: 0}
+	return &aggregateState{sequenceNumber: -1}
 }
 
 func RestoreProjection(label string, aggregateIdentifier string, createInitialProjection func() interface{}, clientConnection *ClientConnection, prepareUnmarshal func(payloadType string) Event) interface{} {
