@@ -73,7 +73,7 @@ func RestoreProjection(label string, aggregateIdentifier string, createInitialPr
 	eventStoreClient := axon_server.NewEventStoreClient(clientConnection.Connection)
 	requestEvents := axon_server.GetAggregateEventsRequest{
 		AggregateId:     aggregateIdentifier,
-		InitialSequence: 0,
+		InitialSequence: -1,
 		AllowSnapshots:  false,
 	}
 	log.Printf("%v Projection: Request events: %v", label, requestEvents)
