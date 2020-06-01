@@ -8,7 +8,7 @@ import (
 	proto "github.com/golang/protobuf/proto"
 	uuid "github.com/google/uuid"
 
-	axon_server "github.com/jeroenvanmaanen/dendrite/src/pkg/grpc/axon_server"
+	axon_server "github.com/dendrite2go/dendrite/src/pkg/grpc/axon_server"
 )
 
 func SendCommand(commandType string, command proto.Message, clientConnection *ClientConnection) error {

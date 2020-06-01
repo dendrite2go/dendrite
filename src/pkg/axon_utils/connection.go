@@ -3,8 +3,8 @@ package axon_utils
 import (
 	context "context"
 	fmt "fmt"
+	axon_server "github.com/dendrite2go/dendrite/src/pkg/grpc/axon_server"
 	uuid "github.com/google/uuid"
-	axon_server "github.com/jeroenvanmaanen/dendrite/src/pkg/grpc/axon_server"
 	grpc "google.golang.org/grpc"
 	grpcKeepAlive "google.golang.org/grpc/keepalive"
 	log "log"

@@ -12,7 +12,7 @@ import (
 	grpc_codes "google.golang.org/grpc/codes"
 	grpc_status "google.golang.org/grpc/status"
 
-	axon_server "github.com/jeroenvanmaanen/dendrite/src/pkg/grpc/axon_server"
+	axon_server "github.com/dendrite2go/dendrite/src/pkg/grpc/axon_server"
 )
 
 func SubscribeCommand(commandName string, stream axon_server.CommandService_OpenStreamClient, clientInfo *axon_server.ClientIdentification) {
