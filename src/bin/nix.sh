@@ -5,6 +5,7 @@ SRC="$(dirname "${BIN}")"
 PROJECT="$(dirname "${SRC}")"
 
 source "${BIN}/verbose.sh"
+source "${SRC}/etc/settings-local.sh"
 
 BIND="${PROJECT}"
 if [ ".$1" = '.--bind' ]
@@ -19,5 +20,5 @@ if type nix >/dev/null 2>&1
 then
   "$@"
 else
-  docker run -ti --rm -v "jeroenvm-nix-store:/nix/store" -v "${HOME}/.cache/nix:/root/.cache/nix" -v "${BIND}:${BIND}" -w "$(pwd)" 'jeroenvm/archetype-go-axon' "$@"
+  docker run -ti --rm -v "jeroenvm-nix-store:/nix/store" -v "${HOME}/.cache/nix:/root/.cache/nix" -v "${BIND}:${BIND}" -w "$(pwd)" "${DOCKER_REPOSITORY}/nix-go-protobuf" "$@"
 fi

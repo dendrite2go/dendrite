@@ -4,5 +4,7 @@ BIN="$(cd "$(dirname "$0")" ; pwd)"
 SRC="$(dirname "${BIN}")"
 DOCKER="${SRC}/docker"
 
-docker build -t 'jeroenvm/archetype-go-axon' "${DOCKER}"
-docker build -t 'jeroenvm/build-protoc' -f "${DOCKER}/Dockerfile-protoc" "${DOCKER}"
+source "${SRC}/etc/settings-local.sh"
+
+docker build -t "${DOCKER_REPOSITORY}/nix-go-protobuf" "${DOCKER}"
+docker build -t "${DOCKER_REPOSITORY}/build-protoc" -f "${DOCKER}/Dockerfile-protoc" "${DOCKER}"
