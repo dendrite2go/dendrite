@@ -22,7 +22,7 @@ import (
 func main() {
 	log.Printf("Key Manager -- reading from standard input")
 
-	conn, e := grpc.Dial("localhost:8181", grpc.WithInsecure())
+	conn, e := grpc.Dial("host.docker.internal:8181", grpc.WithInsecure())
 	if e != nil {
 		log.Printf("Error when dialing application: %v", e)
 		panic("Could not connect to application")
