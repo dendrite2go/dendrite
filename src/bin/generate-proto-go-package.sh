@@ -26,6 +26,6 @@ option go_package = \"src/pkg/grpc/axon_server\";" \
   protoc --go_out="plugins=grpc:${PROJECT}" -I. *.proto
 fi
 
-#cd "${SRC}/proto"
-#log "Generating Go stubs from $(pwd)"
-#protoc --go_out="plugins=grpc:${PROJECT}" -I. *.proto
+cd "${SRC}/proto"
+log "Generating Go stubs from $(pwd)"
+protoc --go_out="plugins=grpc:${PROJECT}" -I. *.proto
