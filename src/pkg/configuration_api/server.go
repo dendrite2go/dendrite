@@ -64,6 +64,7 @@ func (s *GreeterServer) SetPrivateKey(_ context.Context, request *grpc_config.Pr
 }
 
 func (s *GreeterServer) ChangeTrustedKeys(stream grpc_config.ConfigurationService_ChangeTrustedKeysServer) error {
+	log.Printf("ChangeTrustedKeys")
 	var status = grpc_config.Status{}
 	response := grpc_config.TrustedKeyResponse{}
 	nonce := make([]byte, 64)
