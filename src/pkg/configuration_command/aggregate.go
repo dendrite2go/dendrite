@@ -7,7 +7,7 @@ import (
 
 	axon_utils "github.com/dendrite2go/dendrite/src/pkg/axon_utils"
 	axon_server "github.com/dendrite2go/dendrite/src/pkg/grpc/axon_server"
-	grpc_config "github.com/dendrite2go/dendrite/src/pkg/grpc/configuration"
+	grpc_config "github.com/dendrite2go/dendrite/src/pkg/grpc/dendrite_config"
 )
 
 const AggregateIdentifier = "configuration-aggregate"

@@ -15,7 +15,7 @@ import (
 	authentication "github.com/dendrite2go/dendrite/src/pkg/authentication"
 	axon_utils "github.com/dendrite2go/dendrite/src/pkg/axon_utils"
 	axon_server "github.com/dendrite2go/dendrite/src/pkg/grpc/axon_server"
-	grpc_config "github.com/dendrite2go/dendrite/src/pkg/grpc/configuration"
+	grpc_config "github.com/dendrite2go/dendrite/src/pkg/grpc/dendrite_config"
 	trusted "github.com/dendrite2go/dendrite/src/pkg/trusted"
 	utils "github.com/dendrite2go/dendrite/src/pkg/utils"
 )

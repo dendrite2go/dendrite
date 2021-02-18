@@ -4,7 +4,7 @@ import (
 	log "log"
 
 	axon_utils "github.com/dendrite2go/dendrite/src/pkg/axon_utils"
-	grpc_config "github.com/dendrite2go/dendrite/src/pkg/grpc/configuration"
+	grpc_config "github.com/dendrite2go/dendrite/src/pkg/grpc/dendrite_config"
 )
 
 // Redeclare event types, so that they can be extended with event handler methods.

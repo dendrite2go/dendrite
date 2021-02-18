@@ -16,7 +16,7 @@ import (
 	ssh "golang.org/x/crypto/ssh"
 
 	axon_utils "github.com/dendrite2go/dendrite/src/pkg/axon_utils"
-	grpc_config "github.com/dendrite2go/dendrite/src/pkg/grpc/configuration"
+	grpc_config "github.com/dendrite2go/dendrite/src/pkg/grpc/dendrite_config"
 )
 
 var keyManagers map[string]string

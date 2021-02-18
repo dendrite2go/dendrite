@@ -14,7 +14,7 @@ import (
 	ssh "golang.org/x/crypto/ssh"
 	grpc "google.golang.org/grpc"
 
-	grpc_example "github.com/dendrite2go/dendrite/src/pkg/grpc/configuration"
+	grpc_example "github.com/dendrite2go/dendrite/src/pkg/grpc/dendrite_config"
 	trusted "github.com/dendrite2go/dendrite/src/pkg/trusted"
 	utils "github.com/dendrite2go/dendrite/src/pkg/utils"
 )
@@ -22,7 +22,15 @@ import (
 func main() {
 	log.Printf("Key Manager -- reading from standard input")
 
-	conn, e := grpc.Dial("host.docker.internal:8181", grpc.WithInsecure())
+	authority := "host.docker.internal:8181"
+
+	args := os.Args[1:]
+	if len(args) > 0 {
+		authority = args[0]
+	}
+
+	log.Printf("Connecting to: %v", authority)
+	conn, e := grpc.Dial(authority, grpc.WithInsecure())
 	if e != nil {
 		log.Printf("Error when dialing application: %v", e)
 		panic("Could not connect to application")

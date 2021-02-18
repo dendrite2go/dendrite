@@ -1,6 +1,6 @@
 syntax = "proto3";
-package dendrite.configurations;
-option go_package = "src/pkg/grpc/configuration";
+package dendrite_config;
+option go_package = "src/pkg/grpc/dendrite_config";
 
 // API
 
