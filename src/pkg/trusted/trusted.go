@@ -217,6 +217,7 @@ func ParsePrivateKey(pemString string) (givenPrivateKey *rsa.PrivateKey, e error
 }
 
 func CreateJWT(claims jwt.Claims) (token string, e error) {
+	claims.KeyID = privateKeyName
 	tokenBuffer, e := claims.RSASign("RS256", &privateKey)
 	token = string(tokenBuffer)
 	return
