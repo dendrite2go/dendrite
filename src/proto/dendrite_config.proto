@@ -30,6 +30,10 @@ message RegisterCredentialsCommand {
     Credentials credentials = 1;
 }
 
+message RegisterUnencryptedCredentialsCommand {
+    Credentials credentials = 1;
+}
+
 message ChangePropertyCommand {
     KeyValue property = 1;
 }
